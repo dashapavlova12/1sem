@@ -22,14 +22,9 @@ int initialize_array(int * labels);
  
 int main (int argc, char * argv[])
 {
-	if (argc != 3)
-	{
-		printf ("Error!!! Incorrect number of files!");
-		return -1;
-	}
 	int return_check = 0;
-    argv[1] = fopen ("commands.txt", "r");
-    argv[2] = fopen ("bytecod.txt", "w");
+    FILE * commands = fopen ("commands.txt", "r");
+    FILE * bytecod = fopen ("bytecod.txt", "w");
     if(commands == NULL && bytecod == NULL)
     {
     	printf("Error opening files. Check the data.");
@@ -78,12 +73,13 @@ int mem_labels(FILE * commands, int * labels)
     	return -1;
 	}
 	
-    char curr_command[COMMAND] = " ";
+    char curr_command[COMMAND] = {};
     int current_index = 0;
     int label = 0;
  	
     while(fscanf(commands, "%s", curr_command) != EOF)
     {
+    	
         if (strcmp(curr_command, ":") == 0)
         {
             fscanf(commands, "%d", &label);
@@ -113,11 +109,11 @@ int initialize_array(int * labels)
 int checkcom (char * line, FILE * bytecod, FILE * commands, int * labels)
 {
 	int arg = 0;
-	if 0;
+	if (0);
     #define DEF_CMD(name, num, CODE_ASM, CODE_CPU)      \
     else if (strcmp(line, name) == 0)                   \
     {                                                   \
         CODE_ASM            							\ 
-    }
+    }													
     #include "commands.h"
 }
