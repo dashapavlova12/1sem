@@ -24,7 +24,7 @@ int main (int argc, char * argv[])
 {
 	if (argc != 3)
 	{
-		printf ("Error!!! Incorrect number of files!")
+		printf ("Error!!! Incorrect number of files!");
 		return -1;
 	}
 	int return_check = 0;
