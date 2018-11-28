@@ -84,7 +84,6 @@ int mem_labels(FILE * commands, int * labels)
  	
     while(fscanf(commands, "%s", curr_command) != EOF)
     {
-    	
         if (strcmp(curr_command, ":") == 0)
         {
             fscanf(commands, "%d", &label);
