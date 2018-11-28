@@ -68,7 +68,7 @@ int mem_labels(FILE * commands, int * labels)
     int check_return = 0;
     
     check_return = initialize_array(labels);
-    if (check_return == -1)
+    if (check_return == -1 )
     {
     	return -1;
 	}
