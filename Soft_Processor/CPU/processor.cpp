@@ -9,13 +9,11 @@ enum errors
 	POINTER_ERROR,	
 };
 
-int END = 100500;
+int END = 27;
 
 int MEMORY_SIZE = 128;
 
 int LABELS_COUNT = 32;
-
-int COMMAND_INIT = 128;
  
 struct CPU
 {
@@ -39,13 +37,8 @@ int ExecuteCom (int com, struct CPU * MY_CPU, double * commands, int * curpos);
 
 int free_processor (double * commands, FILE * bytecod, struct CPU * MY_CPU);
  
-int main (int argc, char * argv[])
+int main ()
 {
-    if (argc != 2)
-	{
-		printf ("Error!!! 1 file expected");
-		return -1;
-	}
     struct CPU MY_CPU;
     int check_return = 0;
 
@@ -56,7 +49,7 @@ int main (int argc, char * argv[])
     	return POINTER_ERROR;
 	}
 
-    argv[1] = fopen ("bytecod.txt", "r");
+    FILE * bytecod = fopen ("bytecod.txt", "r");
     if (bytecod == NULL)
     {
     	printf("File not found. Check the data.");
@@ -166,10 +159,10 @@ int mem_bytecod(FILE * bytecod, double * commands)
         return POINTER_ERROR;
     }
 
-    double curr_command[COMMAND_INIT] = " ";
+    double curr_command = 0;
     int current_index = 0;
 
-    while(fscanf(bytecod, "%lf", curr_command) != EOF)
+    while(fscanf(bytecod, "%lf", &curr_command) != EOF)
     {
         commands[current_index] = curr_command;
         current_index += 1;
