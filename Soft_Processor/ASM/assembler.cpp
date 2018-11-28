@@ -120,4 +120,5 @@ int checkcom (char * line, FILE * bytecod, FILE * commands, int * labels)
         CODE_ASM            							\ 
     }
     #include "commands.h"
+
 }
