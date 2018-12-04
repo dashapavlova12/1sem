@@ -44,7 +44,7 @@ int printf_file (node_t * node, FILE * database)
 {
 	if (!node || database == NULL)
 		return -1;
-	fprintf (database, " { %s'", node -> value);
+	fprintf (database, " { %s'\n", node -> value);
 	
 	if (node -> left != NULL) printf_file (node -> left, database);
 	else fprintf(database, "{}");
@@ -52,7 +52,7 @@ int printf_file (node_t * node, FILE * database)
 	if (node -> right != NULL) printf_file (node -> right, database);
 	else fprintf(database, " {}");
 	
-	fprintf (database, " }");
+	fprintf (database, " }\n");
 	return 0;
 }
 
