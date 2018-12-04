@@ -126,15 +126,15 @@ int do_play (node_t * node)
 	char ans[BUF] = " ";
 	scanf ("%s", ans);
 	if (strcmp(ans,"no") == 0)
-		{
-			printf ("Nu ladno");
-			return -1;
-		}
+	{
+		printf ("Nu ladno");
+		return -1;
+	}
 	if (strcmp(ans,"no") !=0 && strcmp(ans,"yes") !=0)
-		{
-			printf ("Vvedite yes ili no\n");
-			return -1;
-		}	
+	{
+		printf ("Vvedite yes ili no\n");
+		return -1;
+	}	
 	if (strcmp(ans,"yes") == 0)
 	{
 		questions (node);
