@@ -1,0 +1,15 @@
+{ human' 
+{ animal' 
+{ fairy tale caracter' 
+{ your teacher'{} {} } 
+{ connected with New Year' 
+{ Shrek'{} {} } 
+{ Ded moroz'{} {} } } } 
+{ cat' 
+{ doggo(akita)'{} {} } 
+{ girnokot'{} {} } } } 
+{ proger' 
+{ Analit' 
+{ Ovchesos'{} {} } 
+{ Sergey Gestkov'{} {} } } 
+{ Ded'{} {} } } }
