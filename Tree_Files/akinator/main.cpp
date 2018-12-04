@@ -10,5 +10,11 @@ int main ()
 		exit(-1);
 	}
 	node_t * root = read_database (database, NULL);
-	Tree_Printf (root);
+	do_play (root);
+	fclose(database);
+	database = fopen ("database.txt", "w");
+	printf_file (root, database);
+	graphviz (root);
+	fclose(database);
+	return 0;
 }
